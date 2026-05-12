@@ -1,6 +1,9 @@
 print("Hello from Python")
 
-if 2 > 1:
-    print("2 is greater than 1")
+x = 2
+y = 1
+
+if x > y:
+    print("2 the value of x is greater than y which has the value 1")
 
 print("End of code...")
