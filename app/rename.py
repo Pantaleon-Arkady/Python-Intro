@@ -1,10 +1,23 @@
-import os
+from tkinter import *
+from pathlib import Path
 
-# Define the current and new names
-old_name = "files/trial-rename.jpeg"
-new_name = "files/mad-sokka.jpeg"
+def rename_file():
+    old_file = Path("files/mad-sokka.jpeg")
+    new_file = Path("files/trial-renamed.jpeg")
 
-# Rename the file
-os.rename(old_name, new_name)
+    old_file.rename(new_file)
 
-print("File renamed successfully!")
+    label.config(text="Renamed successfully!")
+
+window = Tk()
+
+window.title("File Renamer")
+window.geometry("300x200")
+
+button = Button(window, text="Rename File", command=rename_file)
+button.pack(pady=20)
+
+label = Label(window, text="")
+label.pack()
+
+window.mainloop()
